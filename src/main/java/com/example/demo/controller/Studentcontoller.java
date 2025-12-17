@@ -9,6 +9,7 @@ import com.example.demo.service.StudentService;
 public class StudentController {
     @Autowired
     private Studentservice service;
+    
     @PostMapping("/add")
     public StudentEntity
     addStudent(@RequestBody StudentEntity student){
@@ -22,5 +23,14 @@ public class StudentController {
     }
     @GetMapping("/{id}")
     publicStudentEntity
-    getS
+    getStudentById(@PathVariable Long id){
+        return
+        service.getStudentById(id);
+    }
+    @PutMapping("/update/{id}")
+    public StudentEntity updateStudent(
+        @PathVariable Long id,
+        @RequestBody StudentEntity Student){
+          return service.updateStudent(id,student);
+    }
 }
