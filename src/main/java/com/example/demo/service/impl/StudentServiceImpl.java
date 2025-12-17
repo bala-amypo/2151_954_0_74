@@ -9,6 +9,17 @@ public class StudentServiuceImpl implements StudentService{
     @Override
     public Student insertStudent(Student st){
         st.setId(counter++);
-
+        store.put(st.getId(),st);
+        return st;
+    }
+    @Override
+    public Lisr<Student
+    @Override
+    public Optimal<Student>getOneStudent(Long id){
+        return Optinal.ofNullable(store.get(id));
+    }
+    @Override
+    public void deleteStudent(Long id){
+        store.remove(id);
     }
 }
