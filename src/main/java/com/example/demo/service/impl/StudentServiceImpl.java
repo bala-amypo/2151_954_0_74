@@ -13,8 +13,10 @@ public class StudentServiuceImpl implements StudentService{
         return st;
     }
     @Override
-    public Lisr<Student
-    @Override
+    public Lisr<Student>getA<llStudent(){
+        return new ArrayList<>(store.values());
+    }
+    @Override 
     public Optimal<Student>getOneStudent(Long id){
         return Optinal.ofNullable(store.get(id));
     }
